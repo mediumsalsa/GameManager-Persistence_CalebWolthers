@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public float health;
     public float XP;
 
+
     private void Awake()
     {
         if (manager == null)
@@ -27,8 +28,12 @@ public class GameManager : MonoBehaviour
 
     private void OnGUI()
     {
-        GUI.Label(new Rect(10, 10, 100, 30), "Health: " + health);
-        GUI.Label(new Rect(10, 40, 100, 30), "XP: " + XP);
+        GUIStyle style = new GUIStyle();
+        style.fontSize = 24; 
+        style.normal.textColor = Color.white;
+
+        GUI.Label(new Rect(10, 10, 100, 30), "Health: " + health, style);
+        GUI.Label(new Rect(10, 40, 100, 30), "XP: " + XP, style);
     }
 
     public void Save()
