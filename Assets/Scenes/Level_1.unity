@@ -239,6 +239,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Input_PlayerName
       objectReference: {fileID: 0}
+    - target: {fileID: 905228186065011104, guid: 75651ac5a49070f4e9985a744512719b, type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 905228186065011104, guid: 75651ac5a49070f4e9985a744512719b, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 905228186065011104, guid: 75651ac5a49070f4e9985a744512719b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 905228186065011104, guid: 75651ac5a49070f4e9985a744512719b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 905228186065011104, guid: 75651ac5a49070f4e9985a744512719b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 905228186065011104, guid: 75651ac5a49070f4e9985a744512719b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 905228186065011104, guid: 75651ac5a49070f4e9985a744512719b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 905228186065011104, guid: 75651ac5a49070f4e9985a744512719b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23
+      objectReference: {fileID: 0}
     - target: {fileID: 5370311791747916850, guid: 75651ac5a49070f4e9985a744512719b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

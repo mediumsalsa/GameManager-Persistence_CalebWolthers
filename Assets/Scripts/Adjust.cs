@@ -24,15 +24,15 @@ public class Adjust : MonoBehaviour
         {
             GameManager.manager.XP -= 10;
         }
-        if (GUI.Button(new Rect(550, 400, 200, 60), "Score +" + GameManager.manager.scoreIncreaser))
+        if (GUI.Button(new Rect(Screen.width / 2.25f, 400, 200, 60), "Score +" + GameManager.manager.scoreIncreaser))
         {
             GameManager.manager.score += GameManager.manager.scoreIncreaser;
         }
-        if (GUI.Button(new Rect(550, 475, 200, 60), "Increase score button strength"))
+        if (GUI.Button(new Rect(Screen.width / 2.25f, 475, 200, 60), "Increase score button strength"))
         {
             GameManager.manager.scoreIncreaser += 1;
         }
-        if (GUI.Button(new Rect(550, 550, 200, 60), "Multiply the score Increase by 2"))
+        if (GUI.Button(new Rect(Screen.width / 2.25f, 550, 200, 60), "Multiply the score Increase by 2"))
         {
             GameManager.manager.scoreIncreaser *= 2;
         }
@@ -54,7 +54,7 @@ public class Adjust : MonoBehaviour
             GameManager.manager.Load();
         }
 
-        if (GUI.Button(new Rect(955, 85, 100, 30), "Submit"))
+        if (GUI.Button(new Rect(Screen.width - 120, 85, 100, 30), "Submit"))
         {
             GameManager.manager.playerName = GameManager.manager.inputField.text;
         }
