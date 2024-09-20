@@ -4,13 +4,23 @@ using UnityEngine;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager manager;
 
+    public TMP_InputField inputField;
+    public TMP_Text levelName;
+
     public float health;
     public float XP;
+    public float score;
+    public string playerName;
+    public float scoreIncreaser;
+    public float scoreIncreaserMultiplier;
 
 
     private void Awake()
@@ -26,6 +36,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        levelName.text = "Level " + currentSceneIndex;
+    }
+
     private void OnGUI()
     {
         GUIStyle style = new GUIStyle();
@@ -34,6 +50,8 @@ public class GameManager : MonoBehaviour
 
         GUI.Label(new Rect(10, 10, 100, 30), "Health: " + health, style);
         GUI.Label(new Rect(10, 40, 100, 30), "XP: " + XP, style);
+        GUI.Label(new Rect(10, 590, 100, 30), "Name: " + playerName, style);
+        GUI.Label(new Rect(10, 625, 100, 30), "Score: " + score, style);
     }
 
     public void Save()
@@ -44,6 +62,10 @@ public class GameManager : MonoBehaviour
         PlayerData data = new PlayerData();
         data.health = health;
         data.XP = XP;
+        data.score = score;
+        data.playerName = playerName;
+        data.scoreIncreaser = scoreIncreaser;
+        data.scoreIncreaserMultiplier = scoreIncreaserMultiplier;
 
         bf.Serialize(file, data);
         file.Close();
@@ -60,6 +82,10 @@ public class GameManager : MonoBehaviour
 
             health = data.health;
             XP = data.XP;
+            score = data.score;
+            playerName = data.playerName;
+            scoreIncreaser = data.scoreIncreaser;
+            scoreIncreaserMultiplier = data.scoreIncreaserMultiplier;
         }
     }
 
@@ -73,7 +99,9 @@ class PlayerData
 
     public float health;
     public float XP;
-
-
+    public float score;
+    public string playerName;
+    public float scoreIncreaser;
+    public float scoreIncreaserMultiplier;
 
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Adjust : MonoBehaviour
 {
@@ -23,6 +24,25 @@ public class Adjust : MonoBehaviour
         {
             GameManager.manager.XP -= 10;
         }
+        if (GUI.Button(new Rect(550, 400, 200, 60), "Score +" + GameManager.manager.scoreIncreaser))
+        {
+            GameManager.manager.score += GameManager.manager.scoreIncreaser;
+        }
+        if (GUI.Button(new Rect(550, 475, 200, 60), "Increase score button strength"))
+        {
+            GameManager.manager.scoreIncreaser += 1;
+        }
+        if (GUI.Button(new Rect(550, 550, 200, 60), "Multiply the score Increase by 2"))
+        {
+            GameManager.manager.scoreIncreaser *= 2;
+        }
+
+
+        if (GUI.Button(new Rect(10, 550, 200, 30), "Reset score and increasers"))
+        {
+            GameManager.manager.score = 0;
+            GameManager.manager.scoreIncreaser = 0;
+        }
 
 
         if (GUI.Button(new Rect(10, 260, 100, 30), "Save"))
@@ -32,6 +52,11 @@ public class Adjust : MonoBehaviour
         if (GUI.Button(new Rect(10, 300, 100, 30), "Load"))
         {
             GameManager.manager.Load();
+        }
+
+        if (GUI.Button(new Rect(955, 85, 100, 30), "Submit"))
+        {
+            GameManager.manager.playerName = GameManager.manager.inputField.text;
         }
     }
 
